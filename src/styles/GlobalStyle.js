@@ -4,12 +4,10 @@ const GlobalStyle = createGlobalStyle`
     *{
         margin: 0;
         padding: 0px;
-        background-color: black;
         color: white;
-    }
-
-    main{
+        background-color: black;
         font-family: Arial, Helvetica, sans-serif;
+        box-sizing: border-box;
     }
 `
 

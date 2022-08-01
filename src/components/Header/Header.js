@@ -18,8 +18,10 @@ const Header = () => {
 
 const Wrapper = styled.div`
     display: flex;
-    flex-direction: column;
     border-bottom: 1px solid white;
+    width: 100vw;
+    justify-content: space-around;
+    align-items: center;
 `
 
 const Busca = styled.input`
