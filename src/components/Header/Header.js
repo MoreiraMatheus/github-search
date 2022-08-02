@@ -16,7 +16,7 @@ const Header = () => {
 
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.header`
     display: flex;
     border-bottom: 1px solid white;
     width: 100vw;

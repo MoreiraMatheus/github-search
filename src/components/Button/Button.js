@@ -12,9 +12,9 @@ const Button = ({ children }) =>{
 
 const Bt = styled.button`
     border: 2px solid white;
-    height: 40px;
-    padding: 4px 8px;
     border-radius: 8px;
+    height: 30px;
+    padding: 4px 8px;
     cursor: pointer;
 `
 

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
-const Main = styled.div`
+const Main = styled.main`
+    display: flex;
     width: 90vw;
     height: 85vh;
     background-color: #111;
