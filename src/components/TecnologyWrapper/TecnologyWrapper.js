@@ -8,6 +8,7 @@ const TecnologyWrapper = styled.div`
     justify-content: center;
     align-items: center;
     row-gap: 30px;
+    border-radius: 0 0 8px 0;
 `
 
 export default TecnologyWrapper

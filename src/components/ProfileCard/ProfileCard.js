@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import Link from "../Link/Link";
 
 const ProfileCard = () => {
     return(
@@ -11,7 +12,7 @@ const ProfileCard = () => {
             <p>@User</p>
             <p>Seguindo: 00</p>
             <p>Seguidores: 00</p>
-            <a href="https://github.com/MoreiraMatheus" target="_blank">Visitar</a>
+            <Link href="https://github.com/MoreiraMatheus" target="_blank">Visitar</Link>
         </Wrapper>
     )
 }
@@ -22,6 +23,7 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 0 0 0 8px;
 
     h1, p, a{
         margin: 4px 0;
@@ -29,16 +31,6 @@ const Wrapper = styled.div`
 
     h1{
         font-size: 1.5em;
-    }
-
-    a{
-        font-weight: bold;
-        font-size: 1.2em;
-        text-decoration: none;
-        &:hover{
-            color: green;
-            transition: 0.1s;
-        }
     }
 `
 const Image = styled.div`

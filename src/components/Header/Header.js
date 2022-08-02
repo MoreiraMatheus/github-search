@@ -5,7 +5,7 @@ import Button from "../Button/Button";
 const Header = () => {
     
     return(
-        <Wrapper> 
+        <Wrapper>
             <Title>GitHub search</Title>
             <div>
                 <Busca></Busca>
