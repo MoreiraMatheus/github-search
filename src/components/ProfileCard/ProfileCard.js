@@ -1,18 +1,37 @@
 import styled from "styled-components"
+import { useState, useEffect } from "react";
 import Link from "../Link/Link";
+import BuscaApi from "../../services/GithubQueryProfile"
 
 const ProfileCard = () => {
+    const [Foto, setFoto] = useState('https://cdn.icon-icons.com/icons2/2506/PNG/512/user_icon_150670.png')
+    const [Nome, setNome] = useState('Nome Aqui')
+    const [User, setUser] = useState('user')
+    const [Seguindo, setSeguindo] = useState('0')
+    const [Seguidores, setSeguidores] = useState('0')
+    const [Url, setUrl] = useState('https://github.com')
+    useEffect(
+        ()=>{
+            BuscaApi.then(response => setFoto(response.avatar_url))
+            BuscaApi.then(response => setNome(response.name))
+            BuscaApi.then(response => setUser(response.login))
+            BuscaApi.then(response => setSeguindo(response.following))
+            BuscaApi.then(response => setSeguidores(response.followers))
+            BuscaApi.then(response => setUrl(response.html_url))
+        }, []
+    )
+
     return(
         <Wrapper>
             {/* trocar o caminho da imagem para utilizar o icone baixado */}
             <Image>
-                <img src="https://cdn.icon-icons.com/icons2/2506/PNG/512/user_icon_150670.png" alt="foto-user"/>
+                <img src={Foto} alt="foto-user"/>
             </Image>
-            <h1>Nome aqui</h1>
-            <p>@User</p>
-            <p>Seguindo: 00</p>
-            <p>Seguidores: 00</p>
-            <Link href="https://github.com/MoreiraMatheus" target="_blank">Visitar</Link>
+            <h1>{Nome}</h1>
+            <p>@{User}</p>
+            <p>Seguindo: {Seguindo}</p>
+            <p>Seguidores: {Seguidores}</p>
+            <Link href={Url} target="_blank">Visitar</Link>
         </Wrapper>
     )
 }

@@ -1,11 +1,21 @@
 import styled from "styled-components";
+import { useState, useEffect } from "react";
+import BuscaApi from "../../services/GithubQueryRepos"
 import Link from "../Link/Link";
 
-const Repository = () => {
+const Repository = ({ NumberRepo }) => {
+    const [NomeRepo, setNomeRepo] = useState('Não há repositório para mostrar')
+    const [LinkRepo, setLinkRepo] = useState('https://github.com')
+    useEffect(
+        ()=>{
+            BuscaApi.then(response => setNomeRepo(response[NumberRepo].name))
+            BuscaApi.then(response => setLinkRepo(response[NumberRepo].html_url))
+        }, []
+    )
     return(
         <Wrapper>
-            <h1>Nome do repositório aqui</h1>
-            <Link href="#" target="_blank">Visitar</Link>
+            <h1>{NomeRepo}</h1>
+            <Link href={LinkRepo} target="_blank">Visitar</Link>
         </Wrapper>
     )
 }

@@ -15,11 +15,11 @@ const App = () => {
             <Main>
                 <ProfileCard/>
                 <ReposWrapper>
-                    <Repository/>
-                    <Repository/>
-                    <Repository/>
-                    <Repository/>
-                    <Repository/>
+                    <Repository NumberRepo={0}/>
+                    <Repository NumberRepo={1}/>
+                    <Repository NumberRepo={2}/>
+                    <Repository NumberRepo={3}/>
+                    <Repository NumberRepo={4}/>
                 </ReposWrapper>
                 <TecnologyWrapper>
                     <Tecnology>JavaScipt</Tecnology>
