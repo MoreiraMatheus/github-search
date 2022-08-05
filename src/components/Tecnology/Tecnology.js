@@ -1,26 +1,25 @@
 import styled from "styled-components";
-
-const Tecnology = ({children}) => {
+import ProgLanguage from "../ProgLanguage/ProgLanguage"
+const Tecnology = () => {
     return(
         <Wrapper>
-            <span>{children}</span>
+            <ProgLanguage>JavaScipt</ProgLanguage>
+            <ProgLanguage>HTML</ProgLanguage>
+            <ProgLanguage>CSS</ProgLanguage>
+            <ProgLanguage>React</ProgLanguage>
         </Wrapper>
     )
 }
 
 const Wrapper = styled.div`
-    background-color: green;
+    width: 25%;
+    height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 200px;
-    height: 30px;
-    border-radius: 15px;
-
-    span{
-        background-color: inherit;
-        font-weight: bold;
-        font-size: 1.2em;
-    }
+    row-gap: 30px;
+    border-radius: 0 0 8px 0;
 `
+
 export default Tecnology
