@@ -4,23 +4,16 @@ import BuscaApi from "../../services/GithubQueryRepos"
 import { useState } from "react";
 
 const Repos = () => {
-    const [ComprimentoRepos, setComprimentoRepos] = useState(0)
-    BuscaApi.then(response => console.log(response))
+    const [Repos, setRepos] = useState([])
+    BuscaApi.then(response => setRepos(response))
     return(
         <Wrapper>
-            <Repository NumberRepo={0}/>
-            <Repository NumberRepo={1}/>
-            <Repository NumberRepo={2}/>
-            <Repository NumberRepo={3}/>
-            <Repository NumberRepo={4}/>
-            <Repository NumberRepo={5}/>
-            <Repository NumberRepo={6}/>
-            <Repository NumberRepo={7}/>
-            <Repository NumberRepo={8}/>
-            <Repository NumberRepo={9}/>
-            <Repository NumberRepo={10}/>
-            <Repository NumberRepo={11}/>
-            <Repository NumberRepo={12}/>
+            {Repos.length > 0 ?
+                Repos.map(
+                    item => <Repository Nome={item.name} link={item.html_url}/>
+                ):
+                <Repository Nome="Não há repositórios para mostrar"/>
+            }
         </Wrapper>
     )
 }

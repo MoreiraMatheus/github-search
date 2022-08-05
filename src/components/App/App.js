@@ -13,7 +13,7 @@ const App = () => {
             <Main>
                 <ProfileCard/>
                 <Repos/>
-                <Tecnology/>
+                {/* <Tecnology/> */}
             </Main>
         </>
     )
