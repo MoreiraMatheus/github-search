@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import Repository from "../Repository/Repository"
+import BuscaApi from "../../services/GithubQueryRepos"
+import { useState } from "react";
 
 const Repos = () => {
+    const [ComprimentoRepos, setComprimentoRepos] = useState(0)
+    BuscaApi.then(response => console.log(response))
     return(
         <Wrapper>
             <Repository NumberRepo={0}/>
-            <Repository NumberRepo={1}/>
-            <Repository NumberRepo={2}/>
-            <Repository NumberRepo={3}/>
-            <Repository NumberRepo={4}/>
         </Wrapper>
     )
 }

@@ -4,34 +4,38 @@ import Link from "../Link/Link";
 import BuscaApi from "../../services/GithubQueryProfile"
 
 const ProfileCard = () => {
-    const [Foto, setFoto] = useState('https://cdn.icon-icons.com/icons2/2506/PNG/512/user_icon_150670.png')
-    const [Nome, setNome] = useState('Nome Aqui')
-    const [User, setUser] = useState('user')
-    const [Seguindo, setSeguindo] = useState('0')
-    const [Seguidores, setSeguidores] = useState('0')
-    const [Url, setUrl] = useState('https://github.com')
+    const [Card, setCard] = useState(
+        {foto: 'https://cdn.icon-icons.com/icons2/2506/PNG/512/user_icon_150670.png',
+        nome: 'Nome Aqui',
+        user: 'user',
+        following: 0,
+        followers: 0,
+        url: 'https://github.com'})
     useEffect(
-        ()=>{
-            BuscaApi.then(response => setFoto(response.avatar_url))
-            BuscaApi.then(response => setNome(response.name))
-            BuscaApi.then(response => setUser(response.login))
-            BuscaApi.then(response => setSeguindo(response.following))
-            BuscaApi.then(response => setSeguidores(response.followers))
-            BuscaApi.then(response => setUrl(response.html_url))
-        }, []
+        () => {BuscaApi.then(
+            response => setCard(
+                {
+                foto: response.avatar_url,
+                nome: response.name,
+                user: response.login,
+                following: response.following,
+                followers: response.followers,
+                url: response.html_url
+                }
+            )
+        )}, []
     )
 
     return(
         <Wrapper>
-            {/* trocar o caminho da imagem para utilizar o icone baixado */}
             <Image>
-                <img src={Foto} alt="foto-user"/>
+                <img src={Card.foto} alt="foto-user"/>
             </Image>
-            <h1>{Nome}</h1>
-            <p>@{User}</p>
-            <p>Seguindo: {Seguindo}</p>
-            <p>Seguidores: {Seguidores}</p>
-            <Link href={Url} target="_blank">Visitar</Link>
+            <h1>{Card.nome}</h1>
+            <p>@{Card.user}</p>
+            <p>Seguindo: {Card.following}</p>
+            <p>Seguidores: {Card.followers}</p>
+            <Link href={Card.url} target="_blank">Visitar</Link>
         </Wrapper>
     )
 }
