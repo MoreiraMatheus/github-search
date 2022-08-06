@@ -1,9 +1,11 @@
 import styled from "styled-components"
 import { useState, useEffect } from "react";
 import Link from "../Link/Link";
-import BuscaApi from "../../services/GithubQueryProfile"
+import ApiQueryProfile from "../../services/GithubQueryProfile"
+
 
 const ProfileCard = () => {
+    const ConsultaApiProfile = ApiQueryProfile()
     const [Card, setCard] = useState(
         {foto: 'https://cdn.icon-icons.com/icons2/2506/PNG/512/user_icon_150670.png',
         nome: 'Nome Aqui',
@@ -11,8 +13,9 @@ const ProfileCard = () => {
         following: 0,
         followers: 0,
         url: 'https://github.com'})
+        
     useEffect(
-        () => {BuscaApi.then(
+        () => {ConsultaApiProfile.then(
             response => setCard(
                 {
                 foto: response.avatar_url,

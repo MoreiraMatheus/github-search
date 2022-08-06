@@ -1,16 +1,18 @@
 import styled from "styled-components";
 import Repository from "../Repository/Repository"
-import BuscaApi from "../../services/GithubQueryRepos"
+import ApiQueryRepos from "../../services/GithubQueryRepos"
 import { useState } from "react";
 
+
 const Repos = () => {
+    const ConsultaApiRepos = ApiQueryRepos()
     const [Repos, setRepos] = useState([])
-    BuscaApi.then(response => setRepos(response))
+    ConsultaApiRepos.then(response => setRepos(response))
     return(
         <Wrapper>
             {Repos.length > 0 ?
                 Repos.map(
-                    item => <Repository Nome={item.name} link={item.html_url}/>
+                    item => <Repository key={item.name} Nome={item.name} link={item.html_url}/>
                 ):
                 <Repository Nome="Não há repositórios para mostrar"/>
             }

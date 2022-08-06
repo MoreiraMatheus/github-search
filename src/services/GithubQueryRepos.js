@@ -1,6 +1,10 @@
-const Base_Url = 'https://api.github.com/users/MoreiraMatheus/repos'
+const Base_Url = 'https://api.github.com/users/'
 
-const BuscaApi = fetch(Base_Url)
-.then(response => response.json())
+const ApiQueryRepos = (conta="MoreiraMatheus") => {
+    return(
+        fetch(Base_Url + conta + "/repos")
+        .then(response => response.json())
+        )
+    }
 
-export default BuscaApi
+export default ApiQueryRepos

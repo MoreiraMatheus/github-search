@@ -1,4 +1,3 @@
-import Title from "../Title/Title"
 import styled from "styled-components";
 import Button from "../Button/Button";
 
@@ -33,6 +32,12 @@ const Busca = styled.input`
     outline: none;
     width: 150px;
     height: 30px;
+`
+
+const Title = styled.h1`
+    font-size: 3em;
+    font-family: Arial, Helvetica, sans-serif;
+    color: green;
 `
 
 export default Header;
