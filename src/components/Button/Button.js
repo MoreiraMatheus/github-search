@@ -1,10 +1,10 @@
 import styled from "styled-components"
 
-const Button = ({ children }) =>{
+const Button = ({ callack, children }) =>{
     
     return(
         <>
-            <Bt>{children}</Bt>
+            <Bt onClick={callack}>{children}</Bt>
         </>
     )
 

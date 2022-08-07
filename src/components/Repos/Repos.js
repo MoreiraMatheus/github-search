@@ -1,13 +1,19 @@
 import styled from "styled-components";
 import Repository from "../Repository/Repository"
 import ApiQueryRepos from "../../services/GithubQueryRepos"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
-const Repos = () => {
-    const ConsultaApiRepos = ApiQueryRepos()
+const Repos = ({ conta }) => {
+    const ConsultaApiRepos = ApiQueryRepos(conta)
     const [Repos, setRepos] = useState([])
-    ConsultaApiRepos.then(response => setRepos(response))
+    
+    useEffect(
+        () => {
+            ConsultaApiRepos.then(response => setRepos(response))
+        }, []
+    )
+
     return(
         <Wrapper>
             {Repos.length > 0 ?

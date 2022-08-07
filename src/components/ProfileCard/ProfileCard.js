@@ -4,8 +4,8 @@ import Link from "../Link/Link";
 import ApiQueryProfile from "../../services/GithubQueryProfile"
 
 
-const ProfileCard = () => {
-    const ConsultaApiProfile = ApiQueryProfile()
+const ProfileCard = ({ conta }) => {
+    const ConsultaApiProfile = ApiQueryProfile(conta)
     const [Card, setCard] = useState(
         {foto: 'https://cdn.icon-icons.com/icons2/2506/PNG/512/user_icon_150670.png',
         nome: 'Nome Aqui',
@@ -13,9 +13,9 @@ const ProfileCard = () => {
         following: 0,
         followers: 0,
         url: 'https://github.com'})
-        
-    useEffect(
-        () => {ConsultaApiProfile.then(
+    
+    const DadosApi = () => {
+        ConsultaApiProfile.then(
             response => setCard(
                 {
                 foto: response.avatar_url,
@@ -26,8 +26,12 @@ const ProfileCard = () => {
                 url: response.html_url
                 }
             )
-        )}, []
-    )
+        )
+    }
+
+    useEffect(() => {DadosApi()}, [])
+
+    useEffect(() => {DadosApi()}, [conta])
 
     return(
         <Wrapper>
@@ -72,5 +76,4 @@ const Image = styled.div`
         width: 100%;
     }
 `
-
 export default ProfileCard;
