@@ -6,7 +6,6 @@ const Tecnology = () => {
             <ProgLanguage>JavaScipt</ProgLanguage>
             <ProgLanguage>HTML</ProgLanguage>
             <ProgLanguage>CSS</ProgLanguage>
-            <ProgLanguage>React</ProgLanguage>
         </Wrapper>
     )
 }

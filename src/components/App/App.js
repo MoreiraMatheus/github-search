@@ -10,7 +10,6 @@ import Tecnology from "../Tecnology/Tecnology"
 
 const App = () => {
     const [Search, setSearch] = useState('')
-    // const ContaGithub = Search.length > 0 ? Search : 'MoreiraMatheus'
     const [ContaGithub, setContaGithub] = useState("MoreiraMatheus")
     return(
         <>
@@ -24,8 +23,8 @@ const App = () => {
                 }}>Buscar</Button>
             </Header>
             <Main>
-                {/* <ProfileCard conta={ContaGithub}/> */}
-                {/* <Repos conta={ContaGithub}/> */}
+                <ProfileCard conta={ContaGithub}/>
+                <Repos conta={ContaGithub}/>
                 {/* <Tecnology/> */}
             </Main>
         </>

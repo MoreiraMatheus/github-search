@@ -8,11 +8,11 @@ const Repos = ({ conta }) => {
     const ConsultaApiRepos = ApiQueryRepos(conta)
     const [Repos, setRepos] = useState([])
     
-    useEffect(
-        () => {
-            ConsultaApiRepos.then(response => setRepos(response))
-        }, []
-    )
+    const DadosApi = () => {ConsultaApiRepos.then(response => setRepos(response))}
+
+    useEffect(() => {DadosApi()}, [])
+
+    useEffect(() => {DadosApi()}, [conta])
 
     return(
         <Wrapper>
