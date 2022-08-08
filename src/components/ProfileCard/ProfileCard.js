@@ -3,16 +3,18 @@ import { useState, useEffect } from "react";
 import Link from "../Link/Link";
 import ApiQueryProfile from "../../services/GithubQueryProfile"
 
-
+const CardBase = 
+    {foto: 'https://cdn.icon-icons.com/icons2/2506/PNG/512/user_icon_150670.png',
+    nome: 'Nome Aqui',
+    user: 'user',
+    following: 0,
+    followers: 0,
+    repositories: 0,
+    url: 'https://github.com'}
 const ProfileCard = ({ conta }) => {
+    const [Card, setCard] = useState(CardBase)
+
     const ConsultaApiProfile = ApiQueryProfile(conta)
-    const [Card, setCard] = useState(
-        {foto: 'https://cdn.icon-icons.com/icons2/2506/PNG/512/user_icon_150670.png',
-        nome: 'Nome Aqui',
-        user: 'user',
-        following: 0,
-        followers: 0,
-        url: 'https://github.com'})
     
     const DadosApi = () => {
         ConsultaApiProfile.then(
@@ -23,6 +25,7 @@ const ProfileCard = ({ conta }) => {
                 user: response.login,
                 following: response.following,
                 followers: response.followers,
+                repositories: response.public_repos,
                 url: response.html_url
                 }
             )
@@ -42,10 +45,10 @@ const ProfileCard = ({ conta }) => {
             <p>@{Card.user}</p>
             <p>Seguindo: {Card.following}</p>
             <p>Seguidores: {Card.followers}</p>
+            <p>Repositórios: {Card.repositories}</p>
             <Link href={Card.url} target="_blank">Visitar</Link>
         </Wrapper>
     )
 }
-
 
 export default ProfileCard;

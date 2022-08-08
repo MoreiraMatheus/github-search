@@ -17,7 +17,7 @@ const App = () => {
             <Header>
                 <Find onChange={e => {
                     setSearch(e.target.value)
-                }} placeholder="usuário" value="MoreiraMatheus"/>
+                }} placeholder="usuário"/>
                 <Button callack={() => {
                     setContaGithub(Search)
                 }}>Buscar</Button>
