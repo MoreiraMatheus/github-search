@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import { Bt } from "./styles"
 
 const Button = ({ callack, children }) =>{
     
@@ -9,14 +9,5 @@ const Button = ({ callack, children }) =>{
     )
 
 }
-
-const Bt = styled.button`
-    border: 2px solid white;
-    border-radius: 8px;
-    height: 30px;
-    padding: 4px 8px;
-    cursor: pointer;
-`
-
 
 export default Button

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import GlobalStyle from "../../styles/GlobalStyle"
 import Header from "../Header/Header"
 import Find from "../Find/Find";
@@ -17,7 +17,7 @@ const App = () => {
             <Header>
                 <Find onChange={e => {
                     setSearch(e.target.value)
-                }} placeholder="usuário"/>
+                }} placeholder="usuário" value="MoreiraMatheus"/>
                 <Button callack={() => {
                     setContaGithub(Search)
                 }}>Buscar</Button>
