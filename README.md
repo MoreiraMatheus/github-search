@@ -11,6 +11,9 @@ Projeto que busca perfis no Github através de fetch API, após a busca dos perf
 * React.js (biblioteca)
 * Styled components (biblioteca)
 
+## Acessando o projeto na web
+[clique aqui para ver o projeto on-line](https://github-search-moreiramatheus.vercel.app)
+
 ## Testando o projeto na sua máquina 💻
 
 Após clonar o repositório na sua máquina vá até o terminal e digite:
