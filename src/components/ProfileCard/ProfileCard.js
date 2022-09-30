@@ -43,23 +43,27 @@ const ProfileCard = ({ conta }) => {
                 <Image>
                     <img src={Card.foto} alt="foto-user"/>
                 </Image>
-                <h1>{Card.nome}</h1>
-                <p>@{Card.user}</p>
-                <p>Seguindo: {Card.following}</p>
-                <p>Seguidores: {Card.followers}</p>
-                <p>Repositórios: {Card.repositories}</p>
-                <Link href={Card.url} target="_blank">Visitar</Link>
+                <div>
+                    <h1>{Card.nome}</h1>
+                    <p>@{Card.user}</p>
+                    <p>Seguindo: {Card.following}</p>
+                    <p>Seguidores: {Card.followers}</p>
+                    <p>Repositórios: {Card.repositories}</p>
+                    <Link href={Card.url} target="_blank">Visitar</Link>
+                </div>
             </>:
             <>
                 <Image>
-                <img src={CardBase.foto} alt="foto-user"/>
+                    <img src={CardBase.foto} alt="foto-user"/>
                 </Image>
-                <h1>{CardBase.nome}</h1>
-                <p>@{CardBase.user}</p>
-                <p>Seguindo: {CardBase.following}</p>
-                <p>Seguidores: {CardBase.followers}</p>
-                <p>Repositórios: {CardBase.repositories}</p>
-                <Link href={CardBase.url} target="_blank">Visitar</Link>
+                <div>
+                    <h1>{CardBase.nome}</h1>
+                    <p>@{CardBase.user}</p>
+                    <p>Seguindo: {CardBase.following}</p>
+                    <p>Seguidores: {CardBase.followers}</p>
+                    <p>Repositórios: {CardBase.repositories}</p>
+                    <Link href={CardBase.url} target="_blank">Visitar</Link>
+                </div>
             </>
             }
         </Wrapper>

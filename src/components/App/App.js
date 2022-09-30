@@ -6,11 +6,11 @@ import Button from "../Button/Button";
 import Main from "../Main/Main"
 import ProfileCard from "../ProfileCard/ProfileCard"
 import Repos from "../Repos/Repos"
-import Tecnology from "../Tecnology/Tecnology"
 
 const App = () => {
     const [Search, setSearch] = useState('')
     const [ContaGithub, setContaGithub] = useState("MoreiraMatheus")
+    
     return(
         <>
             <GlobalStyle/>
@@ -25,7 +25,6 @@ const App = () => {
             <Main>
                 <ProfileCard conta={ContaGithub}/>
                 <Repos conta={ContaGithub}/>
-                {/* <Tecnology/> */}
             </Main>
         </>
     )

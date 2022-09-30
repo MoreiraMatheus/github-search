@@ -8,6 +8,10 @@ const Main = styled.main`
     margin: auto;
     border-radius: 0 0 8px 8px;
     box-shadow: 0 5px 10px rgba(0, 80, 0, 0.6);
+
+    @media (max-width: 500px) {
+        flex-direction: column;
+    }
     
     *{
         background-color: #111;
