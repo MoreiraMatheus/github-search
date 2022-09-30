@@ -3,7 +3,7 @@ import { Wrapper, Title } from "./styles";
 const Header = ({ children }) => {
     return(
         <Wrapper>
-            <Title>GitHub search</Title>
+            <Title translate="no">GitHub search</Title>
             <div>
                 {children}
             </div>
